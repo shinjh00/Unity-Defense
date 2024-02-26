@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
         moveDir.x = inputDir.x;
         moveDir.z = inputDir.y;
     }
-    
+    /*
     private void OnPointer(InputValue value)
     {
         Vector2 inputDir = value.Get<Vector2>();
@@ -62,5 +62,10 @@ public class CameraController : MonoBehaviour
             moveDir.x = 0;
             moveDir.z = 0;
         }
+    }*/
+
+    private void OnZoom(InputValue value)
+    {
+
     }
 }
