@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     [Header("Window")]
     [SerializeField] Canvas windowCanvas;
 
+    [Header("InGame")]
+    [SerializeField] Canvas inGameCanvas;
+
     private Stack<PopUpUI> popUpStack = new Stack<PopUpUI>();
 
     private void Awake()
@@ -81,5 +84,11 @@ public class UIManager : MonoBehaviour
     {
         // 선택한 windowUI를 계층구조 가장 뒤쪽으로 (화면에선 가장 앞으로) 밀어주기
         windowUI.transform.SetAsLastSibling();  // sibling : 형제
+    }
+
+    public T ShowInGameUI<T>(T inGameUI) where T : InGameUI
+    {
+        T ui = Instantiate(inGameUI, inGameCanvas.transform);
+        return ui;
     }
 }

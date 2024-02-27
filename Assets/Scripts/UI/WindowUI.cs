@@ -15,4 +15,9 @@ public class WindowUI : BaseUI, IDragHandler, IPointerDownHandler
     {
         Manager.UI.SelectWindowUI(this);  // 클릭했을 땐 화면에서 맨 위로
     }
+
+    public void Close()
+    {
+        Manager.UI.CloseWindowUI(this);
+    }
 }
